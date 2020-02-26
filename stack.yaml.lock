@@ -3,10 +3,24 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: haskell-lsp-0.19.0.0@sha256:03a1a05fbdea9376cb1edec358866dc5781925badc3f4b5029ccf4174e765efd,5271
+    pantry-tree:
+      size: 1726
+      sha256: 96ca98a39f69a0e3f0f5214caccfa3a2dca8df9db5bafb3f6437451a3c594f59
+  original:
+    hackage: haskell-lsp-0.19.0.0@sha256:03a1a05fbdea9376cb1edec358866dc5781925badc3f4b5029ccf4174e765efd,5271
+- completed:
+    hackage: haskell-lsp-types-0.19.0.0@sha256:b8b462948f506226f324e0e56010cc9b47df90ec9ebad3b18caa9390d5427287,2941
+    pantry-tree:
+      size: 2451
+      sha256: fb1034e11e42909804bd350e3e0de02886371e1935778a3dece3dd3177520c4a
+  original:
+    hackage: haskell-lsp-types-0.19.0.0@sha256:b8b462948f506226f324e0e56010cc9b47df90ec9ebad3b18caa9390d5427287,2941
 snapshots:
 - completed:
-    size: 488576
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/15/0.yaml
-    sha256: e4b6a87b47ec1cf63a7f1a0884a3b276fce2b0d174a10e8753c4f618e7983568
-  original: lts-15.0
+    size: 489011
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/15/1.yaml
+    sha256: d4ecc42b7125d68e4c3c036a08046ad0cd02ae0d9efbe3af2223a00ff8cc16f3
+  original: lts-15.1
