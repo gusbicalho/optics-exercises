@@ -44,10 +44,12 @@ countSparks = lengthOf ( folded . aura . filtered (== Spark) ) deck
 countPowerfulMoves :: Int
 countPowerfulMoves = lengthOf ( folded . moves . folded . movePower . filtered (> 30) ) deck
 
+cardsWithGreatMoves :: [String]
 cardsWithGreatMoves = deck ^.. folded
                              . filtered (anyOf (moves . folded . movePower) (> 40))
                              . name
 
+countSparkMoves :: Int
 countSparkMoves = lengthOf ( folded
                            . filtered ((== Spark) . view aura)
                            . moves
@@ -55,6 +57,7 @@ countSparkMoves = lengthOf ( folded
                            )
                            deck
 
+greatSparkMoves :: [String]
 greatSparkMoves = deck ^.. folded
                          . filteredBy (aura . only Spark)
                          . moves
@@ -62,6 +65,7 @@ greatSparkMoves = deck ^.. folded
                          . filteredBy (movePower . filtered (> 30))
                          . moveName
 
+holoCardWithMostMoves :: Maybe Card
 holoCardWithMostMoves = maximumByOf
                           (folded . filteredBy holo)
                           (Ord.comparing (lengthOf moves))

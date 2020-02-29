@@ -341,7 +341,7 @@ higherOrderFolds2Sample :: [Int]
 higherOrderFolds2Sample = [-10, -5, 4, 3, 8, 6, -2, 3, -5, -7]
 
 trimmingWhile :: (a -> Bool) -> Fold s a -> Fold s a
-trimmingWhile pred = backwards . droppingWhile pred . backwards . droppingWhile pred
+trimmingWhile predicate = backwards . droppingWhile predicate . backwards . droppingWhile predicate
 
 testHigherOrderFolds2 =
   ( check ( lengthOf (takingWhile (<= 0) folded) higherOrderFolds2Sample

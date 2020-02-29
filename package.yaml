@@ -60,6 +60,11 @@ ghc-options:
 - -Wincomplete-uni-patterns
 - -Wredundant-constraints
 - -foptimal-applicative-do
+# easier to do the exercises like this
+- -Wno-missing-signatures
+- -Wno-unused-imports
+- -Wno-type-defaults
+- -Wno-redundant-constraints
 
 default-extensions:
 - ApplicativeDo
