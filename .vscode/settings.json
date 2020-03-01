@@ -5,5 +5,6 @@
   "editor.tabSize": 2,
   "haskell.indentationRules.enabled": false,
   "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "remote.SSH.defaultForwardedPorts": [{"remotePort": 3333, "localPort": 3333}]
 }
