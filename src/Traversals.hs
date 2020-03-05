@@ -1,13 +1,4 @@
 {-# LANGUAGE NoOverloadedStrings #-}
------------------------------------------------------------------------------
--- |
--- Module      :  Traversals
---
--- Usage:
---
--- You can derive lenses automatically for many data types:
---
------------------------------------------------------------------------------
 module Traversals where
 
 import Control.Lens
