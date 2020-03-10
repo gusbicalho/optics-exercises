@@ -26,6 +26,7 @@ dependencies:
 - lens
 - lens-aeson
 - mtl
+- raw-strings-qq
 - text
 
 library:

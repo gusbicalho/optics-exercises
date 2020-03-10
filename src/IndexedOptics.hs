@@ -16,6 +16,7 @@ import qualified Data.Ord as Ord
 import qualified Data.Map as M
 import qualified Data.Set as S
 import qualified Data.Text as T
+import qualified Data.Text.Lens as T.L
 import Numeric.Lens
 import Text.Read (readMaybe)
 
@@ -131,3 +132,22 @@ showBoard b = foldMap (uncurry slotStr) (b ^@.. slotsTraversal)
   where
     slotStr (III, _) c = c : "\n"
     slotStr (_, _) c = [c]
+
+pairFold :: IndexedFold Bool (a, a) a
+pairFold = ifolding $ \(a,b) -> [(False, a), (True, b)]
+
+ipair :: IndexedTraversal Bool (a, a) (b, b) a b
+ipair p (a,b) = liftA2 (,) (indexed p False a) (indexed p True b)
+
+oneIndexed :: (TraversableWithIndex i t, Indexable i p, Enum i, Applicative f)
+           => p a (f b) -> t a -> f (t b)
+oneIndexed = reindexed succ itraversed
+
+invertedIndex :: IndexedTraversal Int [a] [b] a b
+invertedIndex = reindexed (\(xs, i) -> length xs - 1 - i) (selfIndex <.> itraversed)
+
+chars :: IndexedTraversal Int T.Text T.Text Char Char
+chars = indexing each
+
+charCoords :: IndexedTraversal (Int, Int) String String Char Char
+charCoords = indexing lined <.> itraversed
